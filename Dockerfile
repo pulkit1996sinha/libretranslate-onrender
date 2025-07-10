@@ -1,3 +1,8 @@
-FROM libretranslate/libretranslate
+FROM libretranslate/libretranslate:latest
 
-EXPOSE 5000
+# Make sure it listens on Render’s $PORT
+ENV LT_PORT=10000
+
+EXPOSE 10000
+
+CMD ["npm", "start"]
